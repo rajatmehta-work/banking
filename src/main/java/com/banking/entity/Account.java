@@ -2,6 +2,7 @@ package com.banking.entity;
 
 import javax.persistence.*;
 import com.banking.dto.AccountDTO;
+import com.banking.enums.AccountStatus;
 import com.banking.enums.KycStatus;
 import lombok.Builder;
 import lombok.Getter;
@@ -36,9 +37,9 @@ public class Account {
     @Column(name = "document_no", nullable = false)
     private BigDecimal documentNo;
 
-    // @Enumerated(EnumType.STRING)
-    // @Column(name = "status", nullable = false)
-    // private AccountStatus status;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private AccountStatus status;
 
     @Column(name = "balance", nullable = false)
     private Double balance;

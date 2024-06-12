@@ -3,5 +3,7 @@ public enum AccountStatus {
     PENDING,
     BANNED,
     ACTIVATED,
-    CLOSED
+    CLOSED,
+    KYC_PENDING,
+    FAILED
 }
