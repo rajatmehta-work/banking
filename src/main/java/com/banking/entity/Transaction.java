@@ -32,8 +32,8 @@ public class Transaction {
     @JoinColumn(name = "account_id", nullable = false)
     private Account account;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "transaction_type", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "transaction_type_id", nullable = false)
     private TransactionType transactionType;
 
 
