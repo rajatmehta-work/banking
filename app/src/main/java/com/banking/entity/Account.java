@@ -58,7 +58,6 @@ public class Account {
     // @Column(name = "kyc", nullable = false)
     // private KycStatus accountType;    
 
-    // Getters and setters
 
     public static Account fromAccountDTO(AccountDTO accountDTO){
         return Account.builder()
