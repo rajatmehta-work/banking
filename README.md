@@ -50,3 +50,7 @@
   - `POST /transactions`
   - Request Body: `TransactionDTO`
   - Response: `201 Created` or `400 Bad Request`
+
+
+## Swagger
+- http://localhost:8080/swagger-ui/index.html#/
