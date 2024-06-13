@@ -1,6 +1,6 @@
 package com.banking.dto;
 
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,8 +12,8 @@ public class TransactionDTO {
     
     Long accountId;
 
-    Integer operationTypeId;
+    Integer operationTypeId;// add check of id should present in transaction_type table
 
-    @Positive(message = "Amount must be positive")
+    @Min(value = 1, message = "Amount should be positive")
     Double amount;
 }

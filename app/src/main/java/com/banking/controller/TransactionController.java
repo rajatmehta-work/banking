@@ -1,5 +1,6 @@
 package com.banking.controller;
 
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class TransactionController {
      *         or with status 400 (Bad Request) if the transaction could not be processed, (will handle in Exception handler)
      */
     @PostMapping
-    public ResponseEntity<TransactionStatus> createTransaction(@RequestBody TransactionDTO req) {
+    public ResponseEntity<TransactionStatus> createTransaction(@RequestBody @Valid TransactionDTO req) {
         return ResponseEntity.status(HttpStatus.CREATED).body(transactionService.transact(req));
     }
 }

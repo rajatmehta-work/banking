@@ -1,6 +1,8 @@
 package com.banking.dto;
 
 import java.math.BigDecimal;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import com.banking.entity.Account;
 import com.banking.enums.AccountStatus;
 import io.swagger.annotations.ApiModelProperty;
@@ -18,6 +20,7 @@ public class AccountDTO {
     @ApiModelProperty(hidden = true)
     private Long accountId;
 
+    @Min(value = 1, message = "Document number should be positive")
     private BigDecimal documentNumber;
 
     @ApiModelProperty(hidden = true)

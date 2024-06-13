@@ -1,5 +1,6 @@
 package com.banking.entity;
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

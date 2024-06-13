@@ -3,6 +3,7 @@ package com.banking.controller;
 import com.banking.dto.AccountDTO;
 import com.banking.enums.AccountStatus;
 import com.banking.service.AccountService;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,7 @@ public class AccountController {
      * or status 409 (Conflict) if the account already exists.
      */
     @PostMapping
-    public ResponseEntity<AccountStatus> createAccount(@RequestBody AccountDTO accountDTO) {
+    public ResponseEntity<AccountStatus> createAccount(@RequestBody @Valid AccountDTO accountDTO) {
         AccountStatus status = accountService.createAccount(accountDTO);
         if(status != AccountStatus.FAILED){
             return ResponseEntity.status(HttpStatus.CREATED).body(status);
