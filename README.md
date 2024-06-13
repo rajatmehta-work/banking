@@ -21,11 +21,7 @@
 
 1. Clone the repository.
 2. Navigate to the project directory.
-3. Build the project using Maven:
-    ```sh
-    mvn clean install
-    ```
-4. Start the application and PostgreSQL using Docker Compose:
+3. Start the application and PostgreSQL using Docker Compose:
     ```sh
     docker-compose up --build
     ```

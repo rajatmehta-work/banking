@@ -8,9 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import com.banking.enums.TransactionTypeEnum;
+import lombok.Builder;
 
 
 @Entity
+@Builder
 @Table(name = "transaction_type")
 public class TransactionType {
     @Id

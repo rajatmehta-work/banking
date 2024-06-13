@@ -25,7 +25,8 @@ CREATE TABLE accounts (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     document_number bigint not null,
     status account_status_enum not null,
-    balance DECIMAL(15, 2) not null DEFAULT 0
+    balance DECIMAL(15, 2) not null DEFAULT 0,
+    UNIQUE(document_number)
 );
  
 
