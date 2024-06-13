@@ -7,6 +7,7 @@ import com.banking.dto.TransactionDTO;
 import com.banking.entity.Account;
 import com.banking.entity.Transaction;
 import com.banking.entity.TransactionType;
+import com.banking.enums.AccountStatus;
 import com.banking.enums.TransactionStatus;
 import com.banking.repository.AccountRepository;
 import com.banking.repository.TransactionRepository;
@@ -29,6 +30,11 @@ public class TransactionServiceImpl implements TransactionService{
 
         Optional<Account> account = accountRepository.findById(txn.getAccountId());
         // .orElseThrow(() -> new ResourceNotFoundException("Account not found")); //Can throw global error, which will return with status code.
+
+        if(account.get().getStatus() != AccountStatus.ACTIVATED){
+            return TransactionStatus.CANCELED; // Can be handled using more generic message & errors.
+        }
+
         TransactionType txnType  = txnTypeRepository.findById(txn.getOperationTypeId()).orElseThrow(null);  //Can be cached in memory with TTL.
         if(!txnType.isPosType() && account.get().getBalance()<txn.getAmount()){
             return TransactionStatus.CANCELED; //Can return status code with message.

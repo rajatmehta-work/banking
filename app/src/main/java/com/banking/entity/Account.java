@@ -62,7 +62,7 @@ public class Account {
     public static Account fromAccountDTO(AccountDTO accountDTO){
         return Account.builder()
                         .documentNumber(accountDTO.getDocumentNumber())
-                        .status(accountDTO.getStatus()==null?AccountStatus.PENDING:accountDTO.getStatus())
+                        .status(accountDTO.getStatus()==null?AccountStatus.ACTIVATED:accountDTO.getStatus())
                         .build();
     }
 }
