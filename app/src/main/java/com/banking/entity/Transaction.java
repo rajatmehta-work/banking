@@ -1,6 +1,5 @@
 package com.banking.entity;
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -48,6 +47,5 @@ public class Transaction {
     // @Enumerated(EnumType.STRING)
     // @Column(name = "transaction_mode", nullable = false)
     // private TransactionMode transactionMode;
-
-    // Getters and setters
+ 
 }

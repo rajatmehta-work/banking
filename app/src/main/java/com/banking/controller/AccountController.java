@@ -18,7 +18,7 @@ public class AccountController {
 
     @Autowired
     private AccountService accountService;
-    // below comments can be replace with swagger comments
+    // NOTE: below comments can be replace with swagger comments
     /**
      * POST /accounts : Create a new account.
      *

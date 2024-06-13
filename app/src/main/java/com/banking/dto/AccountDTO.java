@@ -2,7 +2,6 @@ package com.banking.dto;
 
 import java.math.BigDecimal;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 import com.banking.entity.Account;
 import com.banking.enums.AccountStatus;
 import io.swagger.annotations.ApiModelProperty;

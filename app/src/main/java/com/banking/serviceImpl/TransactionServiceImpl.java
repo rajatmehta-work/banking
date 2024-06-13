@@ -26,10 +26,10 @@ public class TransactionServiceImpl implements TransactionService{
     @Override
     public TransactionStatus transact(TransactionDTO txn) {
         
-        // Can add more layers of checks...
+        // Can add more layers of checks and microservices calls...
 
-        Optional<Account> account = accountRepository.findById(txn.getAccountId());
-        // .orElseThrow(() -> new ResourceNotFoundException("Account not found")); //Can throw global error, which will return with status code.
+        Optional<Account> account = accountRepository.findById(txn.getAccountId());//Can throw global error in case of not found, which will return with status code.
+        
 
         if(account.get().getStatus() != AccountStatus.ACTIVATED){
             return TransactionStatus.CANCELED; // Can be handled using more generic message & errors.

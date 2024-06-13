@@ -20,5 +20,5 @@ public class Nominee {
     private String email;
     private LocalDateTime createdAt;
 
-    // Getters and Setters
+ 
 }

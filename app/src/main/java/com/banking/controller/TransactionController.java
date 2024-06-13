@@ -30,6 +30,6 @@ public class TransactionController {
      */
     @PostMapping
     public ResponseEntity<TransactionStatus> createTransaction(@RequestBody @Valid TransactionDTO req) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(transactionService.transact(req));
+        return ResponseEntity.status(HttpStatus.CREATED).body(transactionService.transact(req));// We can also use reactive way of programming at scale.
     }
 }
